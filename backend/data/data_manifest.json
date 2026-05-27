@@ -1,0 +1,12 @@
+{
+  "label": "DEMO DATA",
+  "description": "Synthetic dataset mirroring public CBB stat schema. Replace with BartTorvik/Sports Reference ingestion for production.",
+  "season": 2025,
+  "teams_count": 64,
+  "players_count": 608,
+  "sources_intended": [
+    "BartTorvik",
+    "Sports Reference",
+    "NCAA public stats"
+  ]
+}

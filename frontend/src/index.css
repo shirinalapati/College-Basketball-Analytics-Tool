@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-gray-100 antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-card border border-surface-border rounded-xl p-5 shadow-lg;
+  }
+  .btn-primary {
+    @apply bg-illini-orange hover:bg-illini-orange-dim text-white font-semibold px-4 py-2 rounded-lg transition;
+  }
+  .btn-secondary {
+    @apply bg-illini-blue hover:bg-illini-blue-light text-white font-medium px-4 py-2 rounded-lg border border-surface-border transition;
+  }
+  .table-row-hover {
+    @apply hover:bg-illini-blue/30 cursor-pointer transition;
+  }
+  .badge-orange {
+    @apply bg-illini-orange/20 text-illini-orange border border-illini-orange/40 px-2 py-0.5 rounded text-xs font-medium;
+  }
+  .badge-blue {
+    @apply bg-illini-blue/40 text-blue-200 border border-surface-border px-2 py-0.5 rounded text-xs font-medium;
+  }
+}
