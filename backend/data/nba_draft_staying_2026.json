@@ -1,0 +1,32 @@
+{
+  "season_label": "2026",
+  "description": "Players confirmed staying in the 2026 NBA Draft (On3/CBS, post May 27 withdrawal deadline). Removed from 2026-27 college rosters in DevelopmentIQ.",
+  "source": "https://www.on3.com/news/nba-draft-withdrawal-deadline-tracker-who-will-stay-in-return-to-college-basketball/",
+  "players": [
+    { "player_name": "AJ Dybantsa", "team_id": "byu" },
+    { "player_name": "Darryn Peterson", "team_id": "kansas" },
+    { "player_name": "Cameron Boozer", "team_id": "duke" },
+    { "player_name": "Caleb Wilson", "team_id": "north_carolina" },
+    { "player_name": "Darius Acuff Jr.", "team_id": "arkansas" },
+    { "player_name": "Kingston Flemings", "team_id": "houston" },
+    { "player_name": "Keaton Wagler", "team_id": "illinois" },
+    { "player_name": "Mikel Brown Jr.", "team_id": "louisville" },
+    { "player_name": "Nate Ament", "team_id": "tennessee" },
+    { "player_name": "Brayden Burries", "team_id": "arizona" },
+    { "player_name": "Jayden Quaintance", "team_id": "kentucky" },
+    { "player_name": "Labaron Philon", "team_id": "alabama" },
+    { "player_name": "Dailyn Swain", "team_id": "texas" },
+    { "player_name": "Henri Veesaar", "team_id": "north_carolina" },
+    { "player_name": "Allen Graves", "team_id": "santa_clara" },
+    { "player_name": "Christian Anderson", "team_id": "texas_tech" },
+    { "player_name": "Koa Peat", "team_id": "arizona" },
+    { "player_name": "Chris Cenac Jr.", "team_id": "houston" },
+    { "player_name": "Cameron Carr", "team_id": "baylor" },
+    { "player_name": "Morez Johnson Jr.", "team_id": "michigan" },
+    { "player_name": "Yaxel Lendeborg", "team_id": "michigan" },
+    { "player_name": "Aday Mara", "team_id": "michigan" },
+    { "player_name": "Ebuka Okorie", "team_id": "stanford" },
+    { "player_name": "Isaiah Evans", "team_id": "duke" },
+    { "player_name": "Hannes Steinbach", "team_id": "washington" }
+  ]
+}

@@ -7,86 +7,20 @@ from __future__ import annotations
 
 import json
 import random
+import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from teams_universe import TEAMS_SPEC
 
 SEED = 42
 random.seed(SEED)
 np.random.seed(SEED)
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-
-TEAMS_SPEC = [
-    # Big Ten
-    ("illinois", "Illinois", "Big Ten"),
-    ("purdue", "Purdue", "Big Ten"),
-    ("michigan", "Michigan", "Big Ten"),
-    ("michigan_state", "Michigan State", "Big Ten"),
-    ("ohio_state", "Ohio State", "Big Ten"),
-    ("indiana", "Indiana", "Big Ten"),
-    ("iowa", "Iowa", "Big Ten"),
-    ("wisconsin", "Wisconsin", "Big Ten"),
-    ("minnesota", "Minnesota", "Big Ten"),
-    ("northwestern", "Northwestern", "Big Ten"),
-    ("nebraska", "Nebraska", "Big Ten"),
-    ("maryland", "Maryland", "Big Ten"),
-    ("rutgers", "Rutgers", "Big Ten"),
-    ("penn_state", "Penn State", "Big Ten"),
-    # Major national
-    ("duke", "Duke", "ACC"),
-    ("north_carolina", "North Carolina", "ACC"),
-    ("kentucky", "Kentucky", "SEC"),
-    ("kansas", "Kansas", "Big 12"),
-    ("gonzaga", "Gonzaga", "WCC"),
-    ("uconn", "UConn", "Big East"),
-    ("houston", "Houston", "Big 12"),
-    ("auburn", "Auburn", "SEC"),
-    ("tennessee", "Tennessee", "SEC"),
-    ("arizona", "Arizona", "Big 12"),
-    ("ucla", "UCLA", "Big Ten"),
-    ("creighton", "Creighton", "Big East"),
-    ("marquette", "Marquette", "Big East"),
-    ("baylor", "Baylor", "Big 12"),
-    ("florida", "Florida", "SEC"),
-    ("alabama", "Alabama", "SEC"),
-    ("texas", "Texas", "SEC"),
-    ("villanova", "Villanova", "Big East"),
-    ("virginia", "Virginia", "ACC"),
-    ("louisville", "Louisville", "ACC"),
-    # Tournament-relevant / mid-major
-    ("dayton", "Dayton", "A-10"),
-    ("san_diego_state", "San Diego State", "MWC"),
-    ("saint_marys", "Saint Mary's", "WCC"),
-    ("vcu", "VCU", "A-10"),
-    ("memphis", "Memphis", "AAC"),
-    ("colorado_state", "Colorado State", "MWC"),
-    ("boise_state", "Boise State", "MWC"),
-    ("drake", "Drake", "MVC"),
-    ("grand_canyon", "Grand Canyon", "WAC"),
-    ("mcneese", "McNeese", "Southland"),
-    ("vermont", "Vermont", "America East"),
-    ("iona", "Iona", "MAAC"),
-    ("princeton", "Princeton", "Ivy"),
-    ("yale", "Yale", "Ivy"),
-    ("oakland", "Oakland", "Horizon"),
-    ("samford", "Samford", "SoCon"),
-    ("liberty", "Liberty", "C-USA"),
-    ("utah_state", "Utah State", "MWC"),
-    ("nevada", "Nevada", "MWC"),
-    ("new_mexico", "New Mexico", "MWC"),
-    ("byu", "BYU", "Big 12"),
-    ("clemson", "Clemson", "ACC"),
-    ("miami", "Miami", "ACC"),
-    ("texas_am", "Texas A&M", "SEC"),
-    ("arkansas", "Arkansas", "SEC"),
-    ("lsu", "LSU", "SEC"),
-    ("georgia", "Georgia", "SEC"),
-    ("usc", "USC", "Big Ten"),
-    ("oregon", "Oregon", "Big Ten"),
-    ("washington", "Washington", "Big Ten"),
-]
 
 FIRST_NAMES = [
     "Marcus", "Jayden", "Tyler", "Brandon", "Derek", "Chris", "Jordan", "Kyle",
@@ -136,7 +70,12 @@ def _team_profile(tid: str) -> dict:
     return base
 
 
-def generate_teams(season: int = 2025) -> pd.DataFrame:
+# 2025-26 season (end-year convention: 2026 in database, displayed as 2025-26)
+SEASON_YEAR = 2026
+SEASON_LABEL = "2025-26"
+
+
+def generate_teams(season: int = SEASON_YEAR) -> pd.DataFrame:
     rows = []
     for tid, name, conf in TEAMS_SPEC:
         prof = _team_profile(tid)
@@ -242,8 +181,9 @@ def main() -> None:
     players.to_csv(DATA_DIR / "players_demo.csv", index=False)
     meta = {
         "label": "DEMO DATA",
-        "description": "Synthetic dataset mirroring public CBB stat schema. Replace with BartTorvik/Sports Reference ingestion for production.",
-        "season": 2025,
+        "description": "Synthetic 2025-26 season dataset mirroring public CBB stat schema. Replace with BartTorvik/Sports Reference 2025-26 ingestion for production.",
+        "season": SEASON_YEAR,
+        "season_label": SEASON_LABEL,
         "teams_count": len(teams),
         "players_count": len(players),
         "sources_intended": ["BartTorvik", "Sports Reference", "NCAA public stats"],

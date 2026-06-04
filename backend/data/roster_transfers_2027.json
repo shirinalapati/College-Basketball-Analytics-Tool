@@ -1,0 +1,524 @@
+{
+  "season_label": "2026-27",
+  "description": "Transfer portal commits for 2026-27. Only moves to/from teams in the 102-team DevelopmentIQ universe; players must exist on the source team in our 2025-26 stats baseline. Departures remove NBA draft / eligibility exits.",
+  "sources": [
+    "ESPN top-100 transfer tracker",
+    "supplemental reported commits",
+    "nba_draft_staying_2026.json",
+    "nba_draft_withdrawals_2026.json"
+  ],
+  "transfers": [
+    {
+      "player_name": "Drew Fielder",
+      "from_team_id": "boise_state",
+      "to_team_id": "alabama"
+    },
+    {
+      "player_name": "Derek Dixon",
+      "from_team_id": "north_carolina",
+      "to_team_id": "arizona"
+    },
+    {
+      "player_name": "Paulius Murauskas",
+      "from_team_id": "saint_marys",
+      "to_team_id": "arizona_state"
+    },
+    {
+      "player_name": "Jeremiah Wilkinson",
+      "from_team_id": "georgia",
+      "to_team_id": "arkansas"
+    },
+    {
+      "player_name": "Collin Chandler",
+      "from_team_id": "kentucky",
+      "to_team_id": "byu"
+    },
+    {
+      "player_name": "Oswin Erhunmwunse",
+      "from_team_id": "providence",
+      "to_team_id": "creighton"
+    },
+    {
+      "player_name": "Magoon Gwath",
+      "from_team_id": "san_diego_state",
+      "to_team_id": "depaul"
+    },
+    {
+      "player_name": "John Blackwell",
+      "from_team_id": "wisconsin",
+      "to_team_id": "duke"
+    },
+    {
+      "player_name": "Elmarko Jackson",
+      "from_team_id": "kansas",
+      "to_team_id": "georgetown"
+    },
+    {
+      "player_name": "Jaland Lowe",
+      "from_team_id": "kentucky",
+      "to_team_id": "georgetown"
+    },
+    {
+      "player_name": "Josiah Parker",
+      "from_team_id": "florida_atlantic",
+      "to_team_id": "georgetown"
+    },
+    {
+      "player_name": "Vyctorius Miller",
+      "from_team_id": "oklahoma_state",
+      "to_team_id": "georgetown"
+    },
+    {
+      "player_name": "Isiah Harwell",
+      "from_team_id": "houston",
+      "to_team_id": "gonzaga"
+    },
+    {
+      "player_name": "Massamba Diop",
+      "from_team_id": "arizona_state",
+      "to_team_id": "gonzaga"
+    },
+    {
+      "player_name": "Dedan Thomas Jr.",
+      "from_team_id": "lsu",
+      "to_team_id": "houston"
+    },
+    {
+      "player_name": "Stefan Vaaks",
+      "from_team_id": "providence",
+      "to_team_id": "illinois"
+    },
+    {
+      "player_name": "Aiden Sherrell",
+      "from_team_id": "alabama",
+      "to_team_id": "indiana"
+    },
+    {
+      "player_name": "Markus Burton",
+      "from_team_id": "notre_dame",
+      "to_team_id": "indiana"
+    },
+    {
+      "player_name": "Samet Yigitoglu",
+      "from_team_id": "smu",
+      "to_team_id": "indiana"
+    },
+    {
+      "player_name": "Andrew McKeever",
+      "from_team_id": "saint_marys",
+      "to_team_id": "iowa"
+    },
+    {
+      "player_name": "Jaquan Johnson",
+      "from_team_id": "bradley",
+      "to_team_id": "iowa_state"
+    },
+    {
+      "player_name": "Keanu Dawes",
+      "from_team_id": "utah",
+      "to_team_id": "kansas"
+    },
+    {
+      "player_name": "Zoom Diallo",
+      "from_team_id": "washington",
+      "to_team_id": "kentucky"
+    },
+    {
+      "player_name": "Denzel Aberdeen",
+      "from_team_id": "kentucky",
+      "to_team_id": "florida"
+    },
+    {
+      "player_name": "Alvaro Folgueiras",
+      "from_team_id": "iowa",
+      "to_team_id": "louisville"
+    },
+    {
+      "player_name": "Flory Bidunga",
+      "from_team_id": "kansas",
+      "to_team_id": "louisville"
+    },
+    {
+      "player_name": "Jackson Shelstad",
+      "from_team_id": "oregon",
+      "to_team_id": "louisville"
+    },
+    {
+      "player_name": "Karter Knox",
+      "from_team_id": "arkansas",
+      "to_team_id": "louisville"
+    },
+    {
+      "player_name": "Mouhamed Dioubate",
+      "from_team_id": "kentucky",
+      "to_team_id": "lsu"
+    },
+    {
+      "player_name": "Sananda Fru",
+      "from_team_id": "louisville",
+      "to_team_id": "marquette"
+    },
+    {
+      "player_name": "Tomislav Buljan",
+      "from_team_id": "new_mexico",
+      "to_team_id": "maryland"
+    },
+    {
+      "player_name": "Acaden Lewis",
+      "from_team_id": "villanova",
+      "to_team_id": "miami"
+    },
+    {
+      "player_name": "J.P. Estrella",
+      "from_team_id": "tennessee",
+      "to_team_id": "michigan"
+    },
+    {
+      "player_name": "Moustapha Thiam",
+      "from_team_id": "cincinnati",
+      "to_team_id": "michigan"
+    },
+    {
+      "player_name": "Bryson Tiller",
+      "from_team_id": "kansas",
+      "to_team_id": "missouri"
+    },
+    {
+      "player_name": "Jamier Jones",
+      "from_team_id": "providence",
+      "to_team_id": "missouri"
+    },
+    {
+      "player_name": "Matt Able",
+      "from_team_id": "nc_state",
+      "to_team_id": "north_carolina"
+    },
+    {
+      "player_name": "Neoklis Avdalas",
+      "from_team_id": "virginia_tech",
+      "to_team_id": "north_carolina"
+    },
+    {
+      "player_name": "Terrence Brown",
+      "from_team_id": "utah",
+      "to_team_id": "north_carolina"
+    },
+    {
+      "player_name": "Justin Pippen",
+      "from_team_id": "california",
+      "to_team_id": "ohio_state"
+    },
+    {
+      "player_name": "Julius Halaifonua",
+      "from_team_id": "georgetown",
+      "to_team_id": "oklahoma_state"
+    },
+    {
+      "player_name": "Luka Bogavac",
+      "from_team_id": "north_carolina",
+      "to_team_id": "oklahoma_state"
+    },
+    {
+      "player_name": "Adam Clark",
+      "from_team_id": "seton_hall",
+      "to_team_id": "ole_miss"
+    },
+    {
+      "player_name": "Dwayne Aristode",
+      "from_team_id": "arizona",
+      "to_team_id": "oregon"
+    },
+    {
+      "player_name": "Jasper Johnson",
+      "from_team_id": "kentucky",
+      "to_team_id": "oregon"
+    },
+    {
+      "player_name": "Baye Ndongo",
+      "from_team_id": "georgia_tech",
+      "to_team_id": "pittsburgh"
+    },
+    {
+      "player_name": "Malik Mack",
+      "from_team_id": "georgetown",
+      "to_team_id": "providence"
+    },
+    {
+      "player_name": "Miles Byrd",
+      "from_team_id": "san_diego_state",
+      "to_team_id": "providence"
+    },
+    {
+      "player_name": "Donnie Freeman",
+      "from_team_id": "syracuse",
+      "to_team_id": "st_johns"
+    },
+    {
+      "player_name": "Dai Dai Ames",
+      "from_team_id": "california",
+      "to_team_id": "tennessee"
+    },
+    {
+      "player_name": "Jalen Haralson",
+      "from_team_id": "notre_dame",
+      "to_team_id": "tennessee"
+    },
+    {
+      "player_name": "Juke Harris",
+      "from_team_id": "wake_forest",
+      "to_team_id": "tennessee"
+    },
+    {
+      "player_name": "Terrence Hill Jr.",
+      "from_team_id": "vcu",
+      "to_team_id": "tennessee"
+    },
+    {
+      "player_name": "David Punch",
+      "from_team_id": "tcu",
+      "to_team_id": "texas"
+    },
+    {
+      "player_name": "Elyjah Freeman",
+      "from_team_id": "auburn",
+      "to_team_id": "texas"
+    },
+    {
+      "player_name": "Isaiah Johnson",
+      "from_team_id": "colorado",
+      "to_team_id": "texas"
+    },
+    {
+      "player_name": "Mikey Lewis",
+      "from_team_id": "saint_marys",
+      "to_team_id": "texas"
+    },
+    {
+      "player_name": "P.J. Haggerty",
+      "from_team_id": "kansas_state",
+      "to_team_id": "texas_am"
+    },
+    {
+      "player_name": "Dra Gibbs-Lawhorn",
+      "from_team_id": "unlv",
+      "to_team_id": "texas_tech"
+    },
+    {
+      "player_name": "Jaylen Petty",
+      "from_team_id": "texas_tech",
+      "to_team_id": "ucla"
+    },
+    {
+      "player_name": "Najai Hines",
+      "from_team_id": "seton_hall",
+      "to_team_id": "uconn"
+    },
+    {
+      "player_name": "Nikolas Khamenia",
+      "from_team_id": "duke",
+      "to_team_id": "uconn"
+    },
+    {
+      "player_name": "Eric Reibe",
+      "from_team_id": "uconn",
+      "to_team_id": "usc"
+    },
+    {
+      "player_name": "Sebastian Williams-Adams",
+      "from_team_id": "auburn",
+      "to_team_id": "vanderbilt"
+    },
+    {
+      "player_name": "Devin Royal",
+      "from_team_id": "ohio_state",
+      "to_team_id": "villanova"
+    },
+    {
+      "player_name": "Kwame Evans Jr.",
+      "from_team_id": "oregon",
+      "to_team_id": "villanova"
+    },
+    {
+      "player_name": "LeJuan Watts",
+      "from_team_id": "texas_tech",
+      "to_team_id": "washington"
+    },
+    {
+      "player_name": "Mouhamed Sylla",
+      "from_team_id": "georgia_tech",
+      "to_team_id": "west_virginia"
+    },
+    {
+      "player_name": "Chance Westry",
+      "from_team_id": "uab",
+      "to_team_id": "xavier"
+    },
+    {
+      "player_name": "Rub\u00e9n Dominguez",
+      "from_team_id": "texas_am",
+      "to_team_id": "xavier"
+    },
+    {
+      "player_name": "Tru Washington",
+      "from_team_id": "miami",
+      "to_team_id": "xavier"
+    }
+  ],
+  "departures": [
+    {
+      "player_name": "Labaron Philon",
+      "team_id": "alabama",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Brayden Burries",
+      "team_id": "arizona",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Koa Peat",
+      "team_id": "arizona",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Darius Acuff Jr.",
+      "team_id": "arkansas",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Cameron Carr",
+      "team_id": "baylor",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "AJ Dybantsa",
+      "team_id": "byu",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Cameron Boozer",
+      "team_id": "duke",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Isaiah Evans",
+      "team_id": "duke",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Chris Cenac Jr.",
+      "team_id": "houston",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Kingston Flemings",
+      "team_id": "houston",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Keaton Wagler",
+      "team_id": "illinois",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Kylan Boswell",
+      "team_id": "illinois",
+      "reason": "eligibility"
+    },
+    {
+      "player_name": "Abdi Bashir Jr.",
+      "team_id": "kansas_state",
+      "reason": "transfer_portal"
+    },
+    {
+      "player_name": "Jayden Quaintance",
+      "team_id": "kentucky",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Mikel Brown Jr.",
+      "team_id": "louisville",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Tre Donaldson",
+      "team_id": "miami",
+      "reason": "eligibility"
+    },
+    {
+      "player_name": "Aday Mara",
+      "team_id": "michigan",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Morez Johnson Jr.",
+      "team_id": "michigan",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Yaxel Lendeborg",
+      "team_id": "michigan",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Caleb Wilson",
+      "team_id": "north_carolina",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Henri Veesaar",
+      "team_id": "north_carolina",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Allen Graves",
+      "team_id": "santa_clara",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "B.J. Edwards",
+      "team_id": "smu",
+      "reason": "eligibility"
+    },
+    {
+      "player_name": "Jaron Pierre Jr.",
+      "team_id": "smu",
+      "reason": "eligibility"
+    },
+    {
+      "player_name": "Kevin Miller",
+      "team_id": "smu",
+      "reason": "eligibility"
+    },
+    {
+      "player_name": "Ebuka Okorie",
+      "team_id": "stanford",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Nate Ament",
+      "team_id": "tennessee",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Dailyn Swain",
+      "team_id": "texas",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Christian Anderson",
+      "team_id": "texas_tech",
+      "reason": "nba_draft"
+    },
+    {
+      "player_name": "Tarris Reed Jr.",
+      "team_id": "uconn",
+      "reason": "eligibility"
+    },
+    {
+      "player_name": "Hannes Steinbach",
+      "team_id": "washington",
+      "reason": "nba_draft"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "season_label": "2026",
+  "description": "Players who withdrew from the 2026 NBA Draft and are returning to college (or transferring). Must NOT be treated as draft departures.",
+  "source": "On3 withdrawal tracker",
+  "players": [
+    { "player_name": "Matt Able", "team_id": "nc_state" },
+    { "player_name": "Amari Allen", "team_id": "alabama" },
+    { "player_name": "Flory Bidunga", "team_id": "kansas" },
+    { "player_name": "John Blackwell", "team_id": "wisconsin" },
+    { "player_name": "Juke Harris", "team_id": "wake_forest" },
+    { "player_name": "Isiah Harwell", "team_id": "houston" },
+    { "player_name": "Milan Momcilovic", "team_id": "iowa_state" },
+    { "player_name": "Andrej Stojakovic", "team_id": "illinois" },
+    { "player_name": "Tyler Tanner", "team_id": "vanderbilt" },
+    { "player_name": "Billy Richmond", "team_id": "arkansas" },
+    { "player_name": "Malachi Moreno", "team_id": "kentucky" },
+    { "player_name": "Jeremy Fears", "team_id": "michigan_state" }
+  ]
+}

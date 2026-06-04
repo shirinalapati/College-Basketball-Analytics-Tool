@@ -1,0 +1,41 @@
+{
+  "matched_players": 235,
+  "match_rule": "Same school only: player_id includes team_id, so portal/transfer players (even between two of the 102 teams) are excluded. Both seasons must be at a school in the 102-team ingest.",
+  "transfers_included": false,
+  "prior_season": "2024-25",
+  "current_season": "2025-26",
+  "method": "median absolute YoY change per skill bucket; skills ranked by median movement, scores spread 20-100",
+  "median_abs_change": {
+    "shooting": 0.045,
+    "free_throw": 0.071,
+    "ball_security": 0.0205,
+    "defensive_rebounding": 0.02,
+    "offensive_rebounding": 0.01,
+    "foul_discipline": 0.01,
+    "playmaking": 0.0325,
+    "defensive_activity": 0.01,
+    "rim_pressure": 0.042
+  },
+  "samples_per_skill": {
+    "shooting": 235,
+    "free_throw": 235,
+    "ball_security": 235,
+    "defensive_rebounding": 235,
+    "offensive_rebounding": 235,
+    "foul_discipline": 235,
+    "playmaking": 235,
+    "defensive_activity": 235,
+    "rim_pressure": 235
+  },
+  "realism_scores": {
+    "defensive_activity": 20,
+    "offensive_rebounding": 30,
+    "foul_discipline": 40,
+    "defensive_rebounding": 50,
+    "ball_security": 60,
+    "playmaking": 70,
+    "rim_pressure": 80,
+    "shooting": 90,
+    "free_throw": 100
+  }
+}

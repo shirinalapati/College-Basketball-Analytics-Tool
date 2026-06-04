@@ -8,3 +8,8 @@ __pycache__/
 *.db-journal
 *.tsbuildinfo
 frontend/.vite/
+backend/data/espn_pbp_cache/
+backend/data/sr_cache/
+backend/data/sr_cache_prior/
+backend/data/*.log
+backend/developmentiq.db

@@ -23,7 +23,13 @@ export const api = {
     team: import('../types').Team;
     priorities: import('../types').DevelopmentPriority[];
     leverage: Record<string, unknown>;
+    stat_ranks: Record<string, import('../types').StatRank>;
+    simulator_presets: import('../types').SimulatorPresets;
   }>(`/players/${id}`),
+  search: (q: string, limit = 12) => {
+    const params = new URLSearchParams({ q, limit: String(limit) });
+    return fetchJson<import('../types').SearchResponse>(`/search?${params}`);
+  },
   leverageLeaderboard: (limit = 50, teamId?: string) => {
     const q = new URLSearchParams({ limit: String(limit) });
     if (teamId) q.set('team_id', teamId);

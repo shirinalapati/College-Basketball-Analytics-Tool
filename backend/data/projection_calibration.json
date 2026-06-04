@@ -1,0 +1,47 @@
+{
+  "matched_players": 235,
+  "prior_season": "2024-25",
+  "current_season": "2025-26",
+  "method": "75th percentile of positive YoY improvement among same-school returners, clipped to bounds; ceilings from p90 of current-season stats",
+  "scenario": {
+    "shooting": {
+      "three_point_pct_increment": 0.05,
+      "three_point_pct_ceiling": 0.41279999999999994
+    },
+    "free_throw": {
+      "free_throw_pct_increment": 0.08,
+      "free_throw_pct_ceiling": 0.86
+    },
+    "ball_security": {
+      "turnover_reduction_fraction": 0.12
+    },
+    "rim_pressure": {
+      "ts_pct_increment": 0.045,
+      "ts_pct_ceiling": 0.6446000000000001
+    },
+    "defensive_rebounding": {
+      "drb_per_game_increment": 0.04
+    },
+    "offensive_rebounding": {
+      "orb_per_game_increment": 0.020000000000000004
+    },
+    "foul_discipline": {
+      "foul_reduction_fraction": 0.12
+    },
+    "playmaking": {
+      "ast_per_game_increment": 0.04000000000000001
+    },
+    "defensive_activity": {
+      "stl_blk_per_game_increment": 0.025
+    },
+    "point_values": {
+      "second_chance_def_reb": 1.1,
+      "second_chance_off_reb": 1.15,
+      "assist_to_points": 1.5,
+      "activity_to_points": 1.2,
+      "foul_proxy": 0.7,
+      "rim_fga_per_min": 0.35,
+      "rim_efficiency_mult": 0.8
+    }
+  }
+}

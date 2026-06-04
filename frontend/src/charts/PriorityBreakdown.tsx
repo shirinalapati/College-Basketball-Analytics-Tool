@@ -9,8 +9,7 @@ import {
 } from 'recharts';
 import { DevelopmentPriority } from '../types';
 import { SKILL_LABELS } from '../types';
-
-const COLORS = ['#FF5F05', '#13294B', '#FF5F05', '#4a6fa5', '#FF5F05'];
+import { axisTick, categoryTick, PRIORITY_BAR_COLORS, tooltipProps } from './chartTheme';
 
 interface Props {
   priorities: DevelopmentPriority[];
@@ -29,15 +28,12 @@ export default function PriorityBreakdown({ priorities, limit = 5 }: Props) {
   return (
     <ResponsiveContainer width="100%" height={280}>
       <BarChart data={data} layout="vertical" margin={{ left: 80 }}>
-        <XAxis type="number" domain={[0, 100]} tick={{ fill: '#9ca3af' }} />
-        <YAxis type="category" dataKey="name" tick={{ fill: '#e5e7eb', fontSize: 11 }} width={75} />
-        <Tooltip
-          contentStyle={{ background: '#162236', border: '1px solid #2a3f5f' }}
-          labelStyle={{ color: '#fff' }}
-        />
+        <XAxis type="number" domain={[0, 100]} tick={axisTick} />
+        <YAxis type="category" dataKey="name" tick={{ ...categoryTick, fontSize: 11 }} width={75} />
+        <Tooltip {...tooltipProps} formatter={(v: number) => [v.toFixed(1), 'DPS']} />
         <Bar dataKey="dps" name="DPS" radius={[0, 4, 4, 0]}>
           {data.map((_, i) => (
-            <Cell key={i} fill={COLORS[i % COLORS.length]} />
+            <Cell key={i} fill={PRIORITY_BAR_COLORS[i % PRIORITY_BAR_COLORS.length]} />
           ))}
         </Bar>
       </BarChart>

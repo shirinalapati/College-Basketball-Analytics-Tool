@@ -4,7 +4,7 @@
   "private": true,
   "description": "College Basketball Player Development Priority Engine",
   "scripts": {
-    "setup": "cd backend && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt && .venv/bin/python scripts/generate_demo_data.py && .venv/bin/python scripts/seed_database.py && cd ../frontend && npm install",
+    "setup": "cd backend && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt && .venv/bin/python scripts/build_full_dataset.py && .venv/bin/python scripts/seed_database.py && cd ../frontend && npm install",
     "backend": "cd backend && .venv/bin/uvicorn api.main:app --reload --port 8000",
     "frontend": "cd frontend && npm run dev",
     "build": "cd frontend && npm run build",

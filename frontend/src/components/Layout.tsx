@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { ReactNode } from 'react';
+import GlobalSearch from './GlobalSearch';
 
 const NAV = [
   { to: '/', label: 'Overview' },
@@ -17,7 +18,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-surface-border bg-illini-blue sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3 shrink-0">
             <div className="w-10 h-10 rounded-lg bg-illini-orange flex items-center justify-center font-display font-bold text-illini-blue text-lg">
               IQ
             </div>
@@ -28,7 +29,8 @@ export default function Layout({ children }: { children: ReactNode }) {
               <p className="text-xs text-gray-400">College Basketball Player Development Engine</p>
             </div>
           </Link>
-          <nav className="flex flex-wrap gap-1">
+          <GlobalSearch />
+          <nav className="flex flex-wrap gap-1 shrink-0">
             {NAV.map(({ to, label }) => (
               <Link
                 key={to}
@@ -46,9 +48,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
       </header>
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6">{children}</main>
-      <footer className="border-t border-surface-border py-4 text-center text-xs text-gray-500">
-        DevelopmentIQ · Illinois MBB Analytics Internship · Demo data labeled throughout
-      </footer>
     </div>
   );
 }
