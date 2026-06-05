@@ -18,7 +18,7 @@ const CLASS_OPTIONS = [
 export default function LeverageLeaderboard() {
   const [searchParams, setSearchParams] = useSearchParams();
   const highlightPlayer = searchParams.get('player');
-  const teamFilter = searchParams.get('team') || '';
+  const teamFilter = (searchParams.get('team') ?? '').trim();
   const rowRefs = useRef<Record<string, HTMLTableRowElement | null>>({});
   const [rows, setRows] = useState<LeverageRow[]>([]);
   const [teams, setTeams] = useState<Team[]>([]);
@@ -43,7 +43,14 @@ export default function LeverageLeaderboard() {
   }, []);
 
   useEffect(() => {
-    api.leverageLeaderboard(1000, teamFilter || undefined).then(setRows);
+    let cancelled = false;
+    const teamId = teamFilter || undefined;
+    api.leverageLeaderboard(1000, teamId).then((data) => {
+      if (!cancelled) setRows(data);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [teamFilter]);
 
   useEffect(() => {
@@ -87,10 +94,11 @@ export default function LeverageLeaderboard() {
           </p>
         </div>
         <TeamSelect
-          teams={[{ team_id: '', team_name: 'All Teams', conference: '' } as Team, ...teams]}
+          teams={teams}
           value={teamFilter}
           onChange={setTeamFilter}
           label="Filter by team (optional)"
+          allOptionLabel="All Teams"
         />
       </div>
 
