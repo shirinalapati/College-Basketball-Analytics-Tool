@@ -4,7 +4,10 @@ import { api } from '../lib/api';
 import { LeverageRow, Team } from '../types';
 import { SKILL_LABELS } from '../types';
 import { LEVERAGE_PROJ_VALUE_NOTE, PROJ_VALUE_COLUMN_TOOLTIP } from '../lib/projectionCopy';
+import ApiError from '../components/ApiError';
 import TeamSelect from '../components/TeamSelect';
+
+const LEADERBOARD_LIMIT = 200;
 
 const PRIORITY_OPTIONS = Object.entries(SKILL_LABELS).map(([id, label]) => ({ id, label }));
 
@@ -22,6 +25,8 @@ export default function LeverageLeaderboard() {
   const rowRefs = useRef<Record<string, HTMLTableRowElement | null>>({});
   const [rows, setRows] = useState<LeverageRow[]>([]);
   const [teams, setTeams] = useState<Team[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [positionFilter, setPositionFilter] = useState('');
   const [priorityFilter, setPriorityFilter] = useState('');
   const [conferenceFilter, setConferenceFilter] = useState('');
@@ -45,9 +50,28 @@ export default function LeverageLeaderboard() {
   useEffect(() => {
     let cancelled = false;
     const teamId = teamFilter || undefined;
-    api.leverageLeaderboard(1000, teamId).then((data) => {
-      if (!cancelled) setRows(data);
-    });
+
+    const load = async (attempt = 0) => {
+      setLoading(true);
+      setError(null);
+      try {
+        const data = await api.leverageLeaderboard(LEADERBOARD_LIMIT, teamId);
+        if (!cancelled) setRows(data);
+      } catch (err) {
+        if (cancelled) return;
+        if (attempt < 1) {
+          await new Promise((resolve) => window.setTimeout(resolve, 2500));
+          if (!cancelled) await load(attempt + 1);
+          return;
+        }
+        setRows([]);
+        setError(err instanceof Error ? err.message : 'Failed to load leverage leaderboard');
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+
+    void load();
     return () => {
       cancelled = true;
     };
@@ -202,13 +226,17 @@ export default function LeverageLeaderboard() {
           </label>
         </div>
         <p className="text-xs text-gray-500 mt-3">
-          Showing {filteredRows.length} of {rows.length} players.
+          {loading
+            ? 'Loading leverage leaderboard…'
+            : `Showing ${filteredRows.length} of ${rows.length} players (top ${LEADERBOARD_LIMIT} nationally by leverage).`}
           <span className="block mt-1">
             Class reflects projected 2026-27 roster status when available. Incoming high-school freshmen are not
             included in this player stats baseline.
           </span>
         </p>
       </div>
+
+      {error && <ApiError message={error} />}
 
       <div className="card overflow-x-auto">
         <p className="mb-3 text-xs text-gray-500">{LEVERAGE_PROJ_VALUE_NOTE}</p>
@@ -263,10 +291,19 @@ export default function LeverageLeaderboard() {
                 <td>+{r.projected_impact?.toFixed(1)}</td>
               </tr>
             ))}
-            {!filteredRows.length && (
+            {!loading && !filteredRows.length && (
               <tr>
                 <td colSpan={11} className="py-8 text-center text-gray-500">
-                  No players match the current filters.
+                  {rows.length
+                    ? 'No players match the current filters.'
+                    : 'No leverage data available.'}
+                </td>
+              </tr>
+            )}
+            {loading && (
+              <tr>
+                <td colSpan={11} className="py-8 text-center text-gray-500">
+                  Loading players…
                 </td>
               </tr>
             )}

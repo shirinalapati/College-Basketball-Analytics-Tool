@@ -386,10 +386,14 @@ def leverage_leaderboard(
     q = """
         SELECT p.player_name, p.player_id, p.position, p.class_year_2026_27, p.mpg, p.team_id,
                t.team_name, t.conference, d.development_leverage_score, d.top_priority,
-               d.second_priority, d.third_priority
+               d.second_priority, d.third_priority,
+               COALESCE(pri.projected_points_added, 0) AS projected_impact,
+               COALESCE(pri.team_need_alignment, 0) AS team_need_match
         FROM development_leverage_scores d
         JOIN players p ON d.player_id = p.player_id
         JOIN teams t ON p.team_id = t.team_id
+        LEFT JOIN development_priority_scores pri
+            ON pri.player_id = d.player_id AND pri.skill_category = d.top_priority
     """
     params: list[Any] = []
     if team_id:
@@ -398,18 +402,8 @@ def leverage_leaderboard(
     q += " ORDER BY d.development_leverage_score DESC LIMIT ?"
     params.append(limit)
     rows = conn.execute(q, params).fetchall()
-
-    result = []
-    for row in rows:
-        pid = row["player_id"]
-        top = fetch_top_priority_row(conn, pid)
-        result.append({
-            **dict(row),
-            "projected_impact": top["projected_points_added"] if top else 0,
-            "team_need_match": top["team_need_alignment"] if top else 0,
-        })
     conn.close()
-    return result
+    return [dict(row) for row in rows]
 
 
 @app.get("/api/overview")
