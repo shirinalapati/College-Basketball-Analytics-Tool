@@ -155,7 +155,3 @@ developmentiq-cbb/
 - **Default team context:** Illinois (`illinois`) on overview and deep links.
 
 ---
-
-## License
-
-MIT — built for internship evaluation.
