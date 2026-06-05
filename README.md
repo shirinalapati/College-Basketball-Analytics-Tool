@@ -8,6 +8,8 @@ Illinois Men's Basketball Analytics Internship project — a full-stack decision
 
 **Technical formulas:** [`docs/methodology.md`](docs/methodology.md) · In-app **Methodology** page (`/methodology`)
 
+**Live demo:** [illinois-basketball-analytics-tool.vercel.app](https://illinois-basketball-analytics-tool.vercel.app) · API: [illinois-basketball-analytics-tool.onrender.com](https://illinois-basketball-analytics-tool.onrender.com)
+
 ---
 
 ## Problem
