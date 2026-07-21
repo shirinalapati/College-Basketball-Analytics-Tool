@@ -9,7 +9,7 @@ A full-stack decision-support app that identifies which **player–skill** impro
 
 **Technical formulas:** [`docs/methodology.md`](docs/methodology.md) · In-app **Methodology** page (`/methodology`)
 
-**Live demo:** [illinois-basketball-analytics-tool.vercel.app](https://illinois-basketball-analytics-tool.vercel.app) · API: [illinois-basketball-analytics-tool.onrender.com](https://illinois-basketball-analytics-tool.onrender.com)
+**Live demo:** [college-basketball-player-development-tool.vercel.app](https://college-basketball-player-development-tool.vercel.app)
 
 ---
 
