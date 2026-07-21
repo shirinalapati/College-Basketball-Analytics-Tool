@@ -5,15 +5,15 @@ export default {
     extend: {
       colors: {
         illini: {
-          orange: '#FF5F05',
-          blue: '#13294B',
-          'blue-light': '#1a3a6b',
-          'orange-dim': '#cc4c04',
+          orange: '#003087',
+          blue: '#001A57',
+          'blue-light': '#0a2d6b',
+          'orange-dim': '#002060',
         },
         surface: {
-          DEFAULT: '#0f1729',
-          card: '#162236',
-          border: '#2a3f5f',
+          DEFAULT: '#0e0f11',
+          card: '#181a1f',
+          border: '#2f3339',
         },
       },
       fontFamily: {

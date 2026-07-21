@@ -1,7 +1,7 @@
-export const ORANGE = '#FF5F05';
-/** Illinois brand navy — UI chrome only; too dark for chart segments on surface backgrounds */
-export const BRAND_BLUE = '#13294B';
-/** Readable blues on dark cards (~#162236) */
+export const ORANGE = '#003087';
+/** Duke royal blue — primary accent for charts and highlights */
+export const BRAND_BLUE = '#001A57';
+/** Readable blues on neutral dark cards (~#181a1f) */
 export const CHART_BLUE = '#5B9FD4';
 export const CHART_BLUE_SOFT = '#7EB8E8';
 export const MUTED = '#7A9CC4';
@@ -14,7 +14,7 @@ export const BLUE = CHART_BLUE;
 
 export const tooltipProps = {
   contentStyle: {
-    background: '#1e2d45',
+    background: '#181a1f',
     border: `1px solid ${GRID}`,
     borderRadius: 8,
     color: CHART_TEXT,

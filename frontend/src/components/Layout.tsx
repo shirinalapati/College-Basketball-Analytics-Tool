@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <header className="border-b border-surface-border bg-illini-blue sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
           <Link to="/" className="flex items-center gap-3 shrink-0">
-            <div className="w-10 h-10 rounded-lg bg-illini-orange flex items-center justify-center font-display font-bold text-illini-blue text-lg">
+            <div className="w-10 h-10 rounded-lg bg-illini-orange flex items-center justify-center font-display font-bold text-white text-lg">
               IQ
             </div>
             <div>

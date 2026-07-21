@@ -3,9 +3,9 @@
 
 **College Basketball Player Development Priority Engine**
 
-Illinois Men's Basketball Analytics Internship project — a full-stack decision-support app that identifies which **player–skill** improvements would create the most value for a team by combining player gaps, team needs, role/minutes, improvement realism, and basketball impact.
+A full-stack decision-support app that identifies which **player–skill** improvements would create the most value for a team by combining player gaps, team needs, role/minutes, improvement realism, and basketball impact.
 
-![Illini Orange #FF5F05](https://img.shields.io/badge/Illini-Orange-FF5F05) ![React + TypeScript](https://img.shields.io/badge/React-TypeScript-61DAFB) ![FastAPI](https://img.shields.io/badge/FastAPI-009688)
+![Duke Blue #003087](https://img.shields.io/badge/Duke-Blue-003087) ![React + TypeScript](https://img.shields.io/badge/React-TypeScript-61DAFB) ![FastAPI](https://img.shields.io/badge/FastAPI-009688)
 
 **Technical formulas:** [`docs/methodology.md`](docs/methodology.md) · In-app **Methodology** page (`/methodology`)
 
@@ -100,7 +100,7 @@ Optional: `python ingest_sports_reference.py --missing-only` (rate-limited SR ca
 
 | Route | Purpose |
 |-------|---------|
-| `/` | Overview — mission, DPS weight chart, Illinois feature, leverage leaders |
+| `/` | Overview — mission, DPS weight chart, Duke feature, leverage leaders |
 | `/team-needs` | Team Needs Map — ranked weaknesses + radar |
 | `/development-board` | Per-team priorities, Proj. Value, Top Priority, leverage |
 | `/player/:id` | Profile — stats, ranks, top 3 skills, DPS breakdown |
@@ -155,6 +155,6 @@ developmentiq-cbb/
 
 - **Coaches:** Development plans tied to team needs; actionable vs relative labels; simulator scenarios.  
 - **GM / ops:** Team Needs Map; compare severe team need to actionable DPS on roster; leverage leaderboard; portal/recruiting context when no internal pathway exists.  
-- **Default team context:** Illinois (`illinois`) on overview and deep links.
+- **Default team context:** Duke (`duke`) on overview and deep links.
 
 ---

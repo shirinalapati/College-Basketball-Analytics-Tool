@@ -38,7 +38,7 @@ CLASS_YEARS = ["Fr", "So", "Jr", "Sr"]
 
 
 def _team_profile(tid: str) -> dict:
-    """Assign team-level tendencies — Illinois featured with specific weaknesses."""
+    """Assign team-level tendencies — Duke featured with illustrative weaknesses."""
     base = {
         "pace": np.random.uniform(66, 72),
         "offensive_rating": np.random.uniform(102, 118),
@@ -54,7 +54,7 @@ def _team_profile(tid: str) -> dict:
         "steal_rate": np.random.uniform(0.08, 0.11),
         "foul_rate": np.random.uniform(0.18, 0.26),
     }
-    if tid == "illinois":
+    if tid == "duke":
         base.update({
             "defensive_rebound_rate": 0.265,
             "turnover_rate": 0.178,
@@ -64,7 +64,7 @@ def _team_profile(tid: str) -> dict:
             "three_point_rate": 0.38,
             "efg_pct": 0.512,
         })
-    elif tid in ("duke", "purdue", "houston"):
+    elif tid in ("purdue", "houston"):
         base["defensive_rating"] = np.random.uniform(88, 94)
         base["defensive_rebound_rate"] = np.random.uniform(0.30, 0.34)
     return base
@@ -128,12 +128,12 @@ def generate_players(teams: pd.DataFrame) -> pd.DataFrame:
             blk_r = np.random.uniform(0.005, 0.06)
             foul_r = np.random.uniform(0.02, 0.07)
 
-            if tid == "illinois" and i == 2:
+            if tid == "duke" and i == 2:
                 dreb_r = 0.09
                 foul_r = 0.062
                 tp_pct = 0.29
                 mpg = 26.4
-            if tid == "illinois" and i == 4:
+            if tid == "duke" and i == 4:
                 tov_r = 0.19
                 mpg = 24.1
 

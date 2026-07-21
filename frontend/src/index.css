@@ -22,7 +22,7 @@
     @apply hover:bg-illini-blue/30 cursor-pointer transition;
   }
   .badge-orange {
-    @apply bg-illini-orange/20 text-illini-orange border border-illini-orange/40 px-2 py-0.5 rounded text-xs font-medium;
+    @apply bg-illini-orange/15 text-blue-300 border border-illini-orange/50 px-2 py-0.5 rounded text-xs font-medium;
   }
   .badge-blue {
     @apply bg-illini-blue/40 text-blue-200 border border-surface-border px-2 py-0.5 rounded text-xs font-medium;

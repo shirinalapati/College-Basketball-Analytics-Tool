@@ -18,6 +18,7 @@ if str(BACKEND_ROOT) not in sys.path:
     sys.path.insert(0, str(BACKEND_ROOT))
 
 DB_PATH = BACKEND_ROOT / "data" / "developmentiq.db"
+FEATURED_TEAM_ID = "duke"
 
 from models.projection_impact import simulate_impacts_from_sliders  # noqa: E402
 from models.simulator_presets import (  # noqa: E402
@@ -439,8 +440,9 @@ def overview() -> dict:
         """
     ).fetchall()
 
-    illinois = conn.execute(
-        "SELECT * FROM team_need_scores WHERE team_id = 'illinois'"
+    featured = conn.execute(
+        "SELECT * FROM team_need_scores WHERE team_id = ?",
+        (FEATURED_TEAM_ID,),
     ).fetchone()
     conn.close()
 
@@ -455,8 +457,8 @@ def overview() -> dict:
         "players_count": meta_players,
         "top_team_needs": top_needs,
         "top_leverage_players": rows_to_dicts(leverage),
-        "featured_team_id": "illinois",
-        "featured_team_needs": dict(illinois) if illinois else {},
+        "featured_team_id": FEATURED_TEAM_ID,
+        "featured_team_needs": dict(featured) if featured else {},
         "roster_projection_last_updated": manifest.get(
             "roster_projection_last_updated", "2026-05-28"
         ),

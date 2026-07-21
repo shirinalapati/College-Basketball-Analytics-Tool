@@ -11,12 +11,15 @@ import {
   LeverageBarChart,
 } from '../charts/AppCharts';
 import NeedsRadar from '../charts/NeedsRadar';
+import { FEATURED_TEAM_ID, FEATURED_TEAM_NAME } from '../lib/brand';
+
+const featuredTeamId = FEATURED_TEAM_ID;
 
 export default function Overview() {
   const [data, setData] = useState<OverviewData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [illiniExplain, setIlliniExplain] = useState<Record<string, string>>({});
+  const [featuredExplain, setFeaturedExplain] = useState<Record<string, string>>({});
 
   useEffect(() => {
     api
@@ -28,8 +31,8 @@ export default function Overview() {
 
   useEffect(() => {
     api
-      .team('illinois')
-      .then((r) => setIlliniExplain(r.needs?.need_explanations ?? {}))
+      .team(featuredTeamId)
+      .then((r) => setFeaturedExplain(r.needs?.need_explanations ?? {}))
       .catch(() => {});
   }, []);
 
@@ -52,7 +55,7 @@ export default function Overview() {
       })()
     : [];
 
-  const illiniNeeds = data.featured_team_needs
+  const featuredNeeds = data.featured_team_needs
     ? Object.entries(data.featured_team_needs)
         .filter(([k]) => k.endsWith('_need'))
         .map(([k, v]) => ({
@@ -87,7 +90,7 @@ export default function Overview() {
           Central question: Which skill improvement would create the most value for this player and this team?
         </p>
         <p className="mt-4 text-sm text-gray-300 leading-relaxed max-w-3xl border-t border-surface-border/60 pt-4">
-          <strong className="text-white">Example:</strong> If Illinois struggles on the defensive glass,
+          <strong className="text-white">Example:</strong> If Duke struggles on the defensive glass,
           DevelopmentIQ prioritizes rotation players whose{' '}
           <strong className="text-illini-orange">defensive rebounding</strong> improvement would address that
           team weakness because that skill closes a roster gap where
@@ -188,27 +191,27 @@ export default function Overview() {
 
       <section className="card bg-illini-blue/40 border-illini-orange/30">
         <h3 className="font-display text-xl font-bold mb-2">
-          Featured: <span className="text-illini-orange">Illinois Fighting Illini</span>
+          Featured: <span className="text-illini-orange">{FEATURED_TEAM_NAME}</span>
         </h3>
         <p className="text-gray-300 text-sm mb-4">
-          Explore how team needs shape player development priorities for the program you are applying to support.
+          Explore how team needs shape player development priorities for a featured program.
         </p>
-        {illiniNeeds.length > 0 && (
+        {featuredNeeds.length > 0 && (
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <div>
-              <h4 className="text-sm text-gray-400 mb-2">Illinois needs radar</h4>
+              <h4 className="text-sm text-gray-400 mb-2">Duke needs radar</h4>
               {data.featured_team_needs && (
                 <NeedsRadar needs={data.featured_team_needs as Record<string, number>} />
               )}
             </div>
             <div>
               <h4 className="text-sm text-gray-400 mb-2">Top 3 needs (ranked)</h4>
-              <TeamNeedsBarChart items={illiniNeeds} limit={3} />
+              <TeamNeedsBarChart items={featuredNeeds} limit={3} />
               <ul className="mt-3 space-y-2 text-sm">
-                {illiniNeeds.map((n, i) => (
+                {featuredNeeds.map((n, i) => (
                   <li key={n.key} className="text-gray-400 text-xs leading-relaxed">
                     <span className="text-illini-orange font-semibold">{i + 1}. {n.label}</span> —{' '}
-                    {illiniExplain[n.key] || 'See Team Needs Map for stat-backed detail.'}
+                    {featuredExplain[n.key] || 'See Team Needs Map for stat-backed detail.'}
                   </li>
                 ))}
               </ul>
@@ -216,11 +219,11 @@ export default function Overview() {
           </div>
         )}
         <div className="flex flex-wrap gap-3">
-          <Link to="/team-needs?team=illinois" className="btn-primary text-sm">
-            Illinois Team Needs Map
+          <Link to={`/team-needs?team=${featuredTeamId}`} className="btn-primary text-sm">
+            Duke Team Needs Map
           </Link>
-          <Link to="/development-board?team=illinois" className="btn-secondary text-sm">
-            Illinois Development Board
+          <Link to={`/development-board?team=${featuredTeamId}`} className="btn-secondary text-sm">
+            Duke Development Board
           </Link>
         </div>
       </section>

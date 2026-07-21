@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-const DEFAULT_TEAM = 'illinois';
+import { FEATURED_TEAM_ID } from './brand';
+
+const DEFAULT_TEAM = FEATURED_TEAM_ID;
 const STORAGE_KEY = 'developmentiq:selectedTeamId';
 
 export function useTeamQuery(): [string, (id: string) => void] {
